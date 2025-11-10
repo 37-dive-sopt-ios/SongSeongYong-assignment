@@ -5,10 +5,8 @@
 //  Created by 송성용 on 10/31/25.
 //
 
-import Foundation
 import UIKit
 import SnapKit
-import SwiftUI
 import Then
 
 class baeminLoginViewController: BaseViewController {
@@ -105,14 +103,14 @@ class baeminLoginViewController: BaseViewController {
         }
         
         idTextField.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.horizontalEdges.equalToSuperview().inset(40)
             $0.top.equalTo(navigationTitleLabel.snp.bottom).offset(36)
             $0.height.equalTo(46)
             $0.width.equalTo(343)
         }
         
         passwordTextField.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.horizontalEdges.equalToSuperview().inset(40)
             $0.top.equalTo(idTextField.snp.bottom).offset(12)
             $0.height.equalTo(46)
             $0.width.equalTo(343)
@@ -120,7 +118,7 @@ class baeminLoginViewController: BaseViewController {
         
         loginButton.snp.makeConstraints {
             $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.horizontalEdges.equalToSuperview().inset(40)
             $0.height.equalTo(46)
             $0.width.equalTo(343)
         }
@@ -136,13 +134,21 @@ class baeminLoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAddTarget()
+    }
+    
+    // MARK: - Custom Methods
+    
+    private func setAddTarget() {
+        [idTextField, passwordTextField].forEach { textField in
+            textField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+        }
         
         idTextField.addTarget(self, action: #selector(idTextFieldFocused), for: .editingDidBegin)
         idTextField.addTarget(self, action: #selector(idTextFieldUnfocused), for: .editingDidEnd)
+        
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldFocused), for: .editingDidBegin)
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldUnfocused), for: .editingDidEnd)
-        idTextField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -159,8 +165,6 @@ class baeminLoginViewController: BaseViewController {
         loginButton.isEnabled = false
         loginButton.layer.backgroundColor = UIColor(named: "baemin_gray_200")?.cgColor
     }
-    
-    // MARK: - Custom Methods
     
     private func makeTextField(placeholder: String) -> UITextField {
         let textField = UITextField()

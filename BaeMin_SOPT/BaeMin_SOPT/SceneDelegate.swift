@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  sopt_37th_1weekSeminar
-//
-//  Created by 송성용 on 10/11/25.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -13,13 +6,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
+
       // 1.
         guard let windowScene = (scene as? UIWindowScene) else { return }
       // 2.
         let window = UIWindow(windowScene: windowScene)
       // 3.
-        let vc = UINavigationController(rootViewController: baeminLoginViewController())
+        let vc = UINavigationController(rootViewController: LoginViewController())
       // 4.
         window.rootViewController = vc
       // 5.

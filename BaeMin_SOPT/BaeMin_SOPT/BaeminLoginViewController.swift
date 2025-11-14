@@ -1,10 +1,3 @@
-//
-//  baeminLoginViewController.swift
-//  sopt_37th_1weekSeminar
-//
-//  Created by 송성용 on 10/31/25.
-//
-
 import UIKit
 import SnapKit
 import Then

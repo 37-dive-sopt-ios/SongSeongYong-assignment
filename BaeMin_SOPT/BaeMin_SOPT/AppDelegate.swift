@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  sopt_37th_1weekSeminar
-//
-//  Created by 송성용 on 10/11/25.
-//
-
 import UIKit
 
 @main

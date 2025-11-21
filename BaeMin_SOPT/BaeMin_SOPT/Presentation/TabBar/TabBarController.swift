@@ -8,8 +8,7 @@ final class TabBarController: UITabBarController {
         let firstVC = FeedViewController()
         firstVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(resource: .tabIcon), tag: 0)
         
-        let secondVC = UIViewController()
-        secondVC.view.backgroundColor = .baeminMint300
+        let secondVC = UINavigationController(rootViewController: LoginViewController_Network())
         secondVC.tabBarItem = UITabBarItem(title: "장보기·쇼핑", image: UIImage(resource: .tabIcon1), tag: 1)
         
         let thirdVC = UIViewController()

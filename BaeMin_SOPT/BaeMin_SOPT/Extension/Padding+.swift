@@ -1,11 +1,4 @@
-//
-//  Padding.swift
-//  sopt_37th_1weekSeminar
-//
-//  Created by 송성용 on 10/16/25.
-//
 import UIKit
-
 
 extension UITextField {
     func addLeftPadding(_ width: CGFloat = 10) {
@@ -20,6 +13,8 @@ extension UITextField {
         self.rightViewMode = ViewMode.always
     }
     
-
-    
+    func addPadding(leftAmount: CGFloat = 10, rightAmount: CGFloat = 10) {
+        addLeftPadding(leftAmount)
+        addRightPadding(rightAmount)
+    }
 }

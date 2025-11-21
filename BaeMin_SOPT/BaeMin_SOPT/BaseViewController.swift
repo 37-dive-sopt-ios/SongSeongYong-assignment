@@ -1,10 +1,3 @@
-//
-//  BaseViewController.swift
-//  sopt_37th_1weekSeminar
-//
-//  Created by 송성용 on 11/5/25.
-//
-
 import Foundation
 import UIKit
 
@@ -26,7 +19,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .baeminWhite
+        view.backgroundColor = .white
         setStyle()
         setUI()
         setLayout()
